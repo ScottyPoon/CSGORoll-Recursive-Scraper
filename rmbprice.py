@@ -4,7 +4,7 @@ import time
 from google_currency import convert
 from github import Github
 import base64
-
+import os
 
 # TODO: If prices are an hour old do something
 
@@ -103,7 +103,7 @@ def get_buff_amount(name):
         return 0
 
 
-token = "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"
+token = os.environ['HUB_TOKEN']
 repo_name = "buff-prices"
 github = Github(token)
 repository = github.get_user().get_repo(repo_name)
